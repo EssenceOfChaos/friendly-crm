@@ -3,10 +3,8 @@
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
         <a href="/" class="uk-navbar-item uk-logo">FRIENDLY</a>
-            <li>
-                <%= link "Tasks", to: task_path(@conn, :index) %>
-                
-            </li>
+            <li><%= link "Tasks", to: task_path(@conn, :index) %></li>
+            <li><%= link "Customers", to: customer_path(@conn, :index) %></li>
         </ul>
     </div>
 

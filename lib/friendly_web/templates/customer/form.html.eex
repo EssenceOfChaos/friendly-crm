@@ -1,0 +1,60 @@
+<%= form_for @changeset, @action, [class: "uk-form-stacked"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+<fieldset class="uk-fieldset">
+   <legend class="uk-legend">Fill in the fields below</legend>
+    <div class="uk-margin">
+    <%= label f, :first_name, class: "uk-form-label", for: "form-stacked-text"%>
+    <%= text_input f, :first_name, class: "uk-input uk-form-width-medium uk-form-small", id: "form-stacked-text" %>
+    <%= error_tag f, :first_name %>
+  </div>
+
+     <div class="uk-margin">
+    <%= label f, :last_name, class: "uk-form-label" %>
+    <%= text_input f, :last_name, class: "uk-input uk-form-width-medium uk-form-small" %>
+    <%= error_tag f, :last_name %>
+  </div>
+
+  <div class="uk-margin">
+    <%= label f, :email, class: "uk-form-label" %>
+    <%= email_input f, :email, class: "uk-input uk-form-width-medium uk-form-small" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="uk-margin">
+    <%= label f, :street_address, class: "uk-form-label" %>
+    <%= text_input f, :street_address, class: "uk-input uk-form-width-medium uk-form-small" %>
+    <%= error_tag f, :street_address %>
+  </div>
+
+  <div class="uk-margin">
+    <%= label f, :city, class: "uk-form-label" %>
+    <%= text_input f, :city, class: "uk-input uk-form-width-medium uk-form-small" %>
+    <%= error_tag f, :city %>
+  </div>
+
+  <div class="uk-margin">
+    <%= label f, :state, class: "uk-form-label" %>
+    <%= text_input f, :state, class: "uk-input uk-form-width-medium uk-form-small" %>
+    <%= error_tag f, :state %>
+  </div>
+
+  <div class="uk-margin">
+    <%= label f, :zip_code, class: "uk-form-label" %>
+    <%= number_input f, :zip_code, class: "uk-input uk-form-width-small uk-form-small" %>
+    <%= error_tag f, :zip_code %>
+  </div>
+
+<br>
+
+  <div class="uk-margin">
+    <%= submit "Submit", class: "uk-button uk-button-primary uk-button-small" %>
+  </div>
+
+
+  </fieldset>
+<% end %>

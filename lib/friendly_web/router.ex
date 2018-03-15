@@ -15,6 +15,7 @@ defmodule FriendlyWeb.Router do
     plug :accepts, ["json"]
   end
 
+  ## AUTH ROUTES
   scope "/auth", FriendlyWeb do
     pipe_through :browser
     get "/:provider", AuthController, :request
@@ -22,16 +23,18 @@ defmodule FriendlyWeb.Router do
     post "/:provider/callback", AuthController, :callback
   end
 
+  ## ROOT ROUTES
   scope "/", FriendlyWeb do
-    pipe_through :browser # Use the default browser stack
-
+    pipe_through :browser
     get "/", PageController, :index
     get "/logout", AuthController, :logout
     resources "/tasks", TaskController
+    resources "/customers", CustomerController
   end
 
   # Other scopes may use custom stacks.
   # scope "/api", FriendlyWeb do
   #   pipe_through :api
   # end
+
 end

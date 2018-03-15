@@ -1,0 +1,8 @@
+<div class="uk-container">
+  <h2>New Customer</h2>
+
+  <%= render "form.html", Map.put(assigns, :action, customer_path(@conn, :create)) %>
+  <br>
+  <span><%= link "Back", to: customer_path(@conn, :index), class: "uk-button uk-button-default" %></span>
+
+</div>
