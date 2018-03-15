@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Friendly CRM">
+    <meta name="author" content="Frederick John">
+
+    <title>Friendly CRM</title>
+<!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <%= render "_nav.html", conn: @conn %>
+    <div class="uk-container" style="margin-top:35px">
+      <p class="uk-alert-primary" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="uk-alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+    </div> <!-- /container -->
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<div class="uk-container">
+<table class="uk-table uk-table-small uk-table-divider">
+  <caption>Listing all tasks</caption>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Due</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <%= for task <- @tasks do %>
+
+        <tr>
+      <td><%= task.description %></td>
+      <td><%= NaiveDateTime.to_date(task.due) %></td>
+      <td >
+          <div class="uk-button-group">
+        <span><%= link "Show", to: task_path(@conn, :show, task), class: "uk-button uk-button-default uk-button-small" %></span>
+        <span><%= link "Edit", to: task_path(@conn, :edit, task), class: "uk-button uk-button-secondary uk-button-small" %></span>
+        <span><%= link "Delete", to: task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"], class: "uk-button uk-button-danger uk-button-small" %></span>
+      </td>
+        </div>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<br />
+<span><%= link "New Task", to: task_path(@conn, :new), class: "uk-button uk-button-primary" %></span>
+
+</div>

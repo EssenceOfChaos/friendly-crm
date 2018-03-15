@@ -1,0 +1,7 @@
+<div class="uk-container">
+<h2>Edit Task</h2>
+
+<%= render "form.html", Map.put(assigns, :action, task_path(@conn, :update, @task)) %>
+
+<span><%= link "Back", to: task_path(@conn, :index), class: "uk-button uk-button-default" %></span>
+</div>

@@ -1,0 +1,56 @@
+
+<div class="uk-section uk-section-muted " id="header" style="text-align: center">
+ <div class="uk-container ">
+        <h1 class="uk-heading-primary" >Friendly CRM</h1>
+        <br />
+        <p class="uk-text-lead">some paragraph text goes here</p>
+</div>
+</div>
+
+<!--mount point for React -->
+<div id="mount"></div>
+<div class="uk-container">
+<div class="uk-child-width-1-3@s" uk-grid>
+    <div>
+        <h4>Overdue</h4>
+        <div uk-sortable="group: overdue">
+        <%=for task <- @overdue_tasks do %>
+            <div class="uk-margin">
+                <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-card-small">
+                <%= task.description %><br />
+                <%= task.due %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <div>
+        <h4>Upcoming</h4>
+        <div uk-sortable="group: upcoming">
+          <%=for task <- @upcoming_tasks do %>
+            <div class="uk-margin">
+                <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-card-small">
+                <%= task.description %><br />
+                <%= task.due %>
+                </div>
+            </div>
+          <% end %>
+
+        </div>
+    </div>
+    <div>
+        <h4>Finito</h4>
+        <div uk-sortable="group: upcoming">
+    </div>
+</div>
+
+</div>
+
+</div><!-- /container -->
+
+   
+
+
+
+
+

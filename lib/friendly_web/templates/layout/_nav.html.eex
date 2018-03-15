@@ -1,0 +1,34 @@
+<nav class="uk-navbar-container" uk-navbar>
+
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+        <a href="/" class="uk-navbar-item uk-logo">FRIENDLY</a>
+            <li>
+                <%= link "Tasks", to: task_path(@conn, :index) %>
+                
+            </li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+      <%= if logged_in?(@conn) do %>
+        <div class="uk-navbar-item">
+          <a class="uk-button uk-button-default" href="/logout">Logout</a>
+        </div>
+      <% else %>
+        <div class="uk-navbar-item">
+          <a class="uk-button uk-button-primary" href="/auth/auth0">Login</a>
+        </div>
+      <% end %>
+    </div>
+
+</nav>
+<div class="uk-flex uk-flex-right">
+  <%= if logged_in?(@conn) do %>
+   <ul class="uk-subnav" uk-margin>
+    <li><a href="#">Logged in as <%= @conn.assigns.current_user.name %></a></li>
+
+
+    <% end %>
+</ul>
+</div>
