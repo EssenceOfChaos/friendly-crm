@@ -5,6 +5,7 @@ defmodule FriendlyWeb.CustomerController do
   alias Friendly.Accounts.Customer
 
   plug :secure
+  action_fallback FriendlyWeb.FallbackController
 
   def index(conn, _params) do
     customers = Accounts.list_customers()
