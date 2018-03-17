@@ -5,8 +5,7 @@
 # is restricted to this project.
 use Mix.Config
 
-#imoprt_config
-# import_config "env.local.exs"
+
 # General application configuration
 config :friendly,
   ecto_repos: [Friendly.Repo]
