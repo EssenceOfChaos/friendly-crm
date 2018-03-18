@@ -11,6 +11,7 @@ defmodule Friendly.Team.Task do
     field :description, :string
     field :due, :naive_datetime
     field :complete, :boolean, default: false
+    belongs_to :employee, Friendly.Team.Employee
 
     timestamps()
   end
@@ -20,5 +21,6 @@ defmodule Friendly.Team.Task do
     task
     |> cast(attrs, [:description, :due, :complete])
     |> validate_required([:description, :due])
+    |> Ecto.Changeset.assoc_constraint(:employee)
   end
 end

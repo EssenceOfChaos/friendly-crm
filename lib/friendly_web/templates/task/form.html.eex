@@ -7,16 +7,23 @@
 
 <fieldset class="uk-fieldset">
 
-  <div class="uk-form-controls">
+
+<div class="uk-margin">
+  <%= label f, :employee_id, class: "uk-form-label" %>
+  <%= select f, :employee_id, @employees, class: "uk-select uk-form-width-medium" %>
+  <%= error_tag f, :employee_id %>
+  </div>
+ 
+  <div class="uk-margin">
     <%= label f, :due, class: "uk-form-label" %>
-     <%= text_input f, :due, id: "datepicker"%>
+     <%= text_input f, :due, id: "datepicker", class: "uk-form-width-medium"%>
     <%= error_tag f, :due %>
   </div>
 
 
    <div class="uk-margin">
     <%= label f, :description, class: "uk-form-label" %>
-    <%= text_input f, :description, class: "uk-textarea uk-width-1-2" %>
+    <%= text_input f, :description, class: "uk-textarea uk-form-width-large" %>
     <%= error_tag f, :description %>
   </div>
 

@@ -12,6 +12,10 @@
       <strong>Due:</strong>
       <%= @task.due %>
     </li>
+        <li>
+      <strong>Assigned to:</strong>
+      <%= @task.employee_id %>
+    </li>
 
   </ul>
   <div class="uk-button-group">

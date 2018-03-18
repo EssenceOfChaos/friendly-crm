@@ -14,6 +14,18 @@ config :friendly, FriendlyWeb.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../assets", __DIR__)]]
 
+
+
+
+
+
+## Configure AUTH0 ##
+System.get_env("AUTH0_DOMAIN")
+System.get_env("AUTH0_CLIENT_ID")
+System.get_env("AUTH0_CLIENT_SECRET")
+
+
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

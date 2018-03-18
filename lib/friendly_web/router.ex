@@ -30,6 +30,7 @@ defmodule FriendlyWeb.Router do
     get "/logout", AuthController, :logout
     resources "/tasks", TaskController
     resources "/customers", CustomerController
+    resources "/employees", EmployeeController
   end
 
   # Other scopes may use custom stacks.

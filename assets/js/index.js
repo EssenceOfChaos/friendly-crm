@@ -4,12 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // components
+import Header from './components/header';
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>I'm a react component</h1>
+				<Header />
 			</div>
 		);
 	}

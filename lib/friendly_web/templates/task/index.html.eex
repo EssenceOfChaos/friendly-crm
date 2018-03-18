@@ -5,6 +5,8 @@
         <tr>
             <th>Description</th>
             <th>Due</th>
+            <th>Assigned to</th>
+
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,6 +17,7 @@
         <tr>
       <td><%= task.description %></td>
       <td><%= NaiveDateTime.to_date(task.due) %></td>
+      <td><%= task.employee_id %></td>
       <td >
           <div class="uk-button-group">
         <span><%= link "Show", to: task_path(@conn, :show, task), class: "uk-button uk-button-default uk-button-small" %></span>

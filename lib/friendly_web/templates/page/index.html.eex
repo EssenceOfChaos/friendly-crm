@@ -14,27 +14,26 @@
     <div>
         <h4>Overdue</h4>
         <div uk-sortable="group: overdue">
-        <%=for task <- @overdue_tasks do %>
+       
             <div class="uk-margin">
                 <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-card-small">
-                <%= task.description %><br />
-                <%= NaiveDateTime.to_date(task.due) %>
+             <p>example</p>
                 </div>
             </div>
-            <% end %>
+           
         </div>
     </div>
     <div>
         <h4>Upcoming</h4>
         <div uk-sortable="group: upcoming">
-          <%=for task <- @upcoming_tasks do %>
+         
             <div class="uk-margin">
                 <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-card-small">
-                <%= task.description %><br />
-                <%= NaiveDateTime.to_date(task.due) %>
+              
+              <p>example</p>
                 </div>
             </div>
-          <% end %>
+        
 
         </div>
     </div>

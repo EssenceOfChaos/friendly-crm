@@ -1,8 +1,10 @@
 defmodule FriendlyWeb.TaskController do
   use FriendlyWeb, :controller
-
+  import Ecto.Query, warn: false
   alias Friendly.Team
-  alias Friendly.Team.Task
+  alias Friendly.Team.{Task, Employee}
+  alias Friendly.Repo
+  
 
   plug :secure
   action_fallback FriendlyWeb.FallbackController
@@ -10,12 +12,16 @@ defmodule FriendlyWeb.TaskController do
 
   def index(conn, _params) do
     tasks = Team.list_tasks()
+    IO.inspect conn
+    IO.inspect tasks
     render(conn, "index.html", tasks: tasks)
   end
 
   def new(conn, _params) do
+    employees = Repo.all(Employee) |> Enum.map(&{&1.first_name, &1.id})
+
     changeset = Team.change_task(%Task{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, employees: employees)
   end
 
   def create(conn, %{"task" => task_params}) do
