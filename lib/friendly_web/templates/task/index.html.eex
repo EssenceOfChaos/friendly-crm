@@ -17,14 +17,15 @@
         <tr>
       <td><%= task.description %></td>
       <td><%= NaiveDateTime.to_date(task.due) %></td>
-      <td><%= task.employee_id %></td>
+      <td><%= task.employee.first_name %></td>
       <td >
-          <div class="uk-button-group">
+    <div class="uk-button-group">
         <span><%= link "Show", to: task_path(@conn, :show, task), class: "uk-button uk-button-default uk-button-small" %></span>
         <span><%= link "Edit", to: task_path(@conn, :edit, task), class: "uk-button uk-button-secondary uk-button-small" %></span>
         <span><%= link "Delete", to: task_path(@conn, :delete, task), method: :delete, data: [confirm: "Are you sure?"], class: "uk-button uk-button-danger uk-button-small" %></span>
+    </div>
       </td>
-        </div>
+
         </tr>
         <% end %>
     </tbody>

@@ -1,21 +1,23 @@
 <div class="uk-container">
   <h2>Show Task</h2>
-
+   <p class="uk-text-lead">Todays Date: <%= get_date()%></p>
   <ul>
 
     <li>
       <strong>Description:</strong>
       <%= @task.description %>
-    </li>
+    </li><br>
 
     <li>
       <strong>Due:</strong>
-      <%= @task.due %>
-    </li>
+       <%= NaiveDateTime.to_date(@task.due) %>
+
+      
+    </li><br>
         <li>
       <strong>Assigned to:</strong>
-      <%= @task.employee_id %>
-    </li>
+      <%= @task.employee.first_name %>
+    </li><br>
 
   </ul>
   <div class="uk-button-group">

@@ -31,7 +31,7 @@
  
 
   <div class="uk-margin">
-    <%= submit "Submit", class: "uk-button uk-button-primary uk-button-small" %>
+    <%= submit "Submit", class: "uk-button uk-button-primary" %>
   </div>
   </fieldset>
 <% end %>

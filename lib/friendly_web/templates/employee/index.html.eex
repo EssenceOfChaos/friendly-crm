@@ -25,10 +25,12 @@
       <td><%= employee.admin %></td>
 
 
-      <td class="text-right">
-        <span><%= link "Show", to: employee_path(@conn, :show, employee), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: employee_path(@conn, :edit, employee), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: employee_path(@conn, :delete, employee), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      <td >
+      <div class="uk-button-group">
+        <span><%= link "Show", to: employee_path(@conn, :show, employee), class: "uk-button uk-button-default uk-button-small" %></span>
+        <span><%= link "Edit", to: employee_path(@conn, :edit, employee), class: "uk-button uk-button-secondary uk-button-small" %></span>
+        <span><%= link "Delete", to: employee_path(@conn, :delete, employee), method: :delete, data: [confirm: "Are you sure?"], class: "uk-button uk-button-danger uk-button-small" %></span>
+      </div>
       </td>
     </tr>
 <% end %>

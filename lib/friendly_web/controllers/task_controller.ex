@@ -18,8 +18,7 @@ defmodule FriendlyWeb.TaskController do
   end
 
   def new(conn, _params) do
-    employees = Repo.all(Employee) |> Enum.map(&{&1.first_name, &1.id})
-
+    employees = Repo.all(Employee) |> Enum.map(&({&1.first_name, &1.id}))
     changeset = Team.change_task(%Task{})
     render(conn, "new.html", changeset: changeset, employees: employees)
   end

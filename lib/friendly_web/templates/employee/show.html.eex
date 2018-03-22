@@ -1,3 +1,4 @@
+<div class="uk-container">
 <h2>Show Employee</h2>
 
 <ul>
@@ -27,7 +28,19 @@
     <%= @employee.admin %>
   </li>
 
-</ul>
 
-<span><%= link "Edit", to: employee_path(@conn, :edit, @employee) %></span>
-<span><%= link "Back", to: employee_path(@conn, :index) %></span>
+    <li>
+    <strong>Tasks: </strong>
+
+      <p>placehold</p> 
+      <p>placehold</p> 
+    </li>
+
+</ul>
+  <div class="uk-button-group">
+    <span><%= link "Edit", to: employee_path(@conn, :edit, @employee), class: "uk-button uk-button-default uk-button-small" %></span>
+    <span><%= link "Back", to: employee_path(@conn, :index), class: "uk-button uk-button-default uk-button-small" %></span>
+  </div>
+
+
+</div>

@@ -1,11 +1,12 @@
 defmodule Friendly.Team.Task do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query, warn: false
+  alias Friendly.Repo
 
-  @moduledoc """
+    @moduledoc """
     Module for defining Tasks.
-  """
-
+    """
 
   schema "tasks" do
     field :description, :string
@@ -19,8 +20,10 @@ defmodule Friendly.Team.Task do
   @doc false
   def changeset(task, attrs) do
     task
-    |> cast(attrs, [:description, :due, :complete])
+    |> cast(attrs, [:description, :due, :complete, :employee_id])
     |> validate_required([:description, :due])
-    |> Ecto.Changeset.assoc_constraint(:employee)
+    
   end
+
+
 end
